@@ -1,0 +1,284 @@
+/* Universal selector to reset default margins and paddings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+main {
+    flex: 1;
+}
+
+/* Basic styles for the HTML and body to ensure full height and the desried font */
+html, body {
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Ensuring the body uses Flexbox to push the footer down */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation bar styling */
+
+nav {
+    display: flex;
+    background-color: white;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+    font-size: 20px;
+    border-top: solid 2px violet;
+    border-bottom: 1px solid #e0dfdf;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 0;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.nav-list li a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.nav-list li a:hover {
+    color: #ff00ff;
+    transform: scale(1.5);
+}
+
+/* Section style for the main content container */
+
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+}
+
+/* Section style for individual sections */
+.sidebar {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-right: 1px solid #e0dfdf;
+
+
+}
+
+.sidebar img {
+    max-width: 100%; /*Makes sure the image is never wider than the sidebar */
+    height: auto; /* Maintains the aspect ratio of the image */
+    object-fit: cover; /* Makes sure the content of the image is not distorted */
+    display: block;   /* Removes any inline spacing */
+    margin: 1rem auto; /* Centers the image and adds margin on the top and bottom */
+    border-radius: 50%;
+}
+
+.sidebar .profile-photo {
+    border-radius: 50%; /* Makes the image a circle */
+    width: 20vw; /* Sets the width as a percentage of the view[ort width */
+    height: 20vw; /* Sets the height equal to the width maintain a circle */
+    object-fit: cover; /* Ensures the content of the image is not distorted */
+    display: block; /* Removes any inline spacing */
+    margin: 1rem auto; /* Centers the image and adds margin on the top and bottom */
+    max-width: 300px; /* Maximum the size the image can be */
+    max-height: 300px; /* Maximum the height to match the maximum width */
+    min-width: 100px; /* Minimum size the image can be */
+    min-height: 100px; /* Minimum the height to match the minimum width */
+    margin-top: 75px;
+}
+
+.sidebar h2, .sidebar p {
+    /* Remove specfic padding values and instead centers the text */
+    text-align: center; /* Centers text */
+    margin: 0 auto; /* Auto margins center the block elements */
+    max-width: 90%; /* Limits the width and ensures padding within the sidebar */
+    font-size: calc(1vw + 10px); /*Combines viewport width and a fixed value for scaling */
+}
+
+/* Adds space above the heading and below the heading */
+.sidebar h2 {
+    margin-top: 1rem; 
+    margin-bottom: 0.5rem;
+}
+
+/* Adds space between paragraphs */
+.sidebar p {
+    margin-bottom: 1rem; 
+}
+
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#about, #skills, #interests, #experinece, #education  {
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+section p {
+    margin-top: 40px;
+    max-width: 700px;
+    margin-right: auto;
+}
+
+section p:first-child {
+    margin-top: 40px;
+}
+
+section p:nth-of-type(n+2) {
+    margin-top: 20px;
+}
+
+section table {
+    padding-top: 40px;
+}
+
+section table td{
+    padding-right: 20px;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+table td {
+    padding: 16px;
+    padding-left: 0;
+    min-width: 160px;
+}
+
+/* Styling for the Skills webpage */
+
+div.skills-bar {
+    width: 100%;
+    border-radius: 10px;
+    height: 20px;
+    background-color: lightgray;
+  }
+  div.bar {
+    border-radius: 10px;
+    height: 20px;
+    background-color: royalblue;
+  }
+
+.skill {
+    width: 100%;
+    
+} 
+
+/* Styles the header for skills, education, experience, intrests, about */
+ section > h1 {
+    margin: 0 0 10px 0;
+}
+
+/* Styling for the Experience and Education webpage */
+
+#experinece div,
+#education div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+#experinece div:nth-child(odd),
+#education div:nth-child(odd) {
+    margin-bottom: 16px;
+}
+
+#experinece h3,
+#education h3 {
+    margin: 0;
+}
+
+#experinece div p,
+#education div p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Footer styles to ensure it stays at the bottom */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* Smooth Scrolling effect for links */
+html {
+    scroll-behavior: smooth;
+}
+
+.active {
+    color: purple !important;
+}
+
+
+/* Reponsiveness */
+
+@media (max-width: 600px) {
+    .nav-list li {
+        display: block;
+        margin: 0;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+    .sidebar p {
+        font-size: 14px;
+    }
+
+    .nav-list li a  {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content-container {
+        display: block;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    img {
+        width: 50vw;
+    }
+
+
+}
+
+
+
+
